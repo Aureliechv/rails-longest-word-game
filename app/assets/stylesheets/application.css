@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://source.unsplash.com/4Zaq5xY5M_c/4032×3024");
+  background-size: cover;
+  height: 100vh;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+p {
+  margin: 0;
+}

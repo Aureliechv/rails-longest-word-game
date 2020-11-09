@@ -1,5 +1,8 @@
-<h1>Result</h1>
-<p><%= @result %></p>
-<p>Your score for this round is <%= @score %></p>
-<p>Your total score is <%= @total_score %></p>
+<div class="container result">
+  <h1>✨ RESULT ✨</h1>
+  <h3><%= @result %></h3>
+  <p>----------------------</p>
+  <p>score: <strong><%= @score %></strong></p>
+  <p>total score: <strong><%= session[:total_score] %></strong></p>
+</div>
 <%= link_to "Play again", new_path %>

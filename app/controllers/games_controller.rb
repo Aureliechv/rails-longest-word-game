@@ -15,14 +15,16 @@ class GamesController < ApplicationController
   end
 
   def score?(answer)
-    answer.length**2
+    score = answer.length**2
+    session[:total_score] += score
+    score
   end
 
   def score
-    @score = 0
     answer = params[:answer].upcase
+    @score = 0
     letters_array = params[:letters].split
-    @result = if answer.each_char.map { |letter| letters_array.include?(letter) } .include? false
+    @result = if answer.each_char.map { |letter| params[:letters].split.include?(letter) } .include? false
                 "Sorry but #{answer} can't be built out of #{letters_array.join(', ')}"
               elsif attempt_word_exist?(answer) == false
                 "Sorry but #{answer} doesn't seem to be a valid english word..."
